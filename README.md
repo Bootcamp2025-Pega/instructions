@@ -116,13 +116,20 @@ SonarCloud is a cloud-based service designed to continuosly inspect your cose fo
 
 #### **Integrate SonarCloud to your project**
 In order to integrate Sonar into your project follow those steps:
-* 1. Go to SonarCould [login page](https://sonarcloud.io/login)
-* 2. Choose login with Github
+1. Go to SonarCould [login page](https://sonarcloud.io/login)
+2. Choose login with Github
 ![Login with Github](img/sonar-loging.png)
-* 3. Grand SonarQubeCloud necessary permissions
+3. Grand SonarQubeCloud necessary permissions
 ![Sonar permisions](img/sonar-authorize.png)
-* 4. Connect to bootcamp org //TODO!
-* 5. 
+4. Connect to bootcamp org //TODO!
+5. Generate token. In order to connect Github and Sonar you need to generate token:
+* First go to My Account
+![My Acocunt](img/generate-token-account.png)
+* Go to Security tab, enter token name of your choosing, generate token
+![Security tab](img/sonar-generating-token.png)
+6. Now you need to add token to Github secrets. Enter name and contents of your secret.
+![Github token](img/sonar-adding-token.png)
+7. You are all set!
 
 
 ### 3.3.5. Test Coverage
