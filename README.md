@@ -107,6 +107,23 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 ### 3.3.3. Verify pull request
 
 ### 3.3.4. Static Code Analysis
+#### **SonarCloud**
+SonarCloud is a cloud-based service designed to continuosly inspect your cose for quality and security issues. What it does:
+* Code Quality Analisys: scans code to detect bugs, code smells, and vulnerabilities
+* Integration: easy integration with CI/CD pipelines, and tools like Github, Bitbucket, Azure DevOps
+* Pull Request decoration: It can provide comments on pull requests with summary of its results
+* Dashboard: Detailed dashboard is available
+
+#### **Integrate SonarCloud to your project**
+In order to integrate Sonar into your project follow those steps:
+* 1. Go to SonarCould [login page](https://sonarcloud.io/login)
+* 2. Choose login with Github
+![Login with Github](img/sonar-loging.png)
+* 3. Grand SonarQubeCloud necessary permissions
+![Sonar permisions](img/sonar-authorize.png)
+* 4. Connect to bootcamp org //TODO!
+* 5. 
+
 
 ### 3.3.5. Test Coverage
 
