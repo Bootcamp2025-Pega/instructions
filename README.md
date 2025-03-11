@@ -93,9 +93,14 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
     * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
     ```bash
     # Run backend
-    cd backend && docker-compose up
+    cd backend
+    npm install
+    npm run build
+    docker-compose up
+
     # Run frontend
-    cd .. && npm run dev
+    cd .. 
+    npm run dev
     ```
     
     **TODO**
