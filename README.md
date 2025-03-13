@@ -92,10 +92,11 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
     * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
     * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
     ```bash
-    # Run backend
+    # Run npm install:
+    npm install
     cd backend && docker-compose up
     # Run frontend
-    cd .. && npm run dev
+    npm run dev
     ```
     
     **TODO**
