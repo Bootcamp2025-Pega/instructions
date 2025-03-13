@@ -152,6 +152,26 @@ In order to integrate Sonar into your project follow those steps:
 
 ### 3.3.6. Static Application Security Testing (SAST)
 
+1.	Create new account on Semgrep (this can be done via Sign in with Github)
+2.	Go to Projects tab 
+![Semgrep - Projects](img/semgrep/ad2.png)
+3.  Select Scan new project
+![Semgrep - Projects](img/semgrep/ad3.png)
+4.	Select Semgrep Managed Scans
+5.	Select GitHub
+6.	Connect to GitHub
+7.	Clisk Add other GitHub organization
+8.	Select Bootcamp2025-Pega
+9.	Select All repositories
+10.	Install & Authorize 
+11.	 You should now see Bootcamp2025-Pega organization listed in Semgrep, select it and click Continue
+12.	Paste organization name and click Register GitHub App
+![Semgrep - Projects](img/semgrep/ad12.png)
+13. Create GitHub App got `Bootcamp2025-Pega-<unique_name>` the app name has to be unique across GitHub
+![Semgrep - Projects](img/semgrep/ad13.png)
+14.	Click Install
+![Semgrep - Projects](img/semgrep/ad14.png)
+
 ### 3.3.7. Software Composition Analysis (SCA)
 
 ### 3.3.8. ...
