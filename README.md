@@ -66,27 +66,27 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
   *   For detailed instructions, refer to the [instructions repository](https://github.com/Bootcamp2025-Pega/instructions). This is the document you are currently reading.
 
-3.  **Navigate to the movie-night-planner application repository**
+3.  **Navigate to the bootcamp-blog application repository**
 
-  *  Please see [movie-night-planner repository](https://github.com/Bootcamp2025-Pega/movie-night-planner). This is a repository with the application we will be working on. This is an interactive UI-based application where users can build and manage a personal movie watchlist.
+  *  Please see [bootcamp-blog repository](https://github.com/Bootcamp2025-Pega/bootcamp-blog). This is a repository with the application we will be working on. This is an interactive UI-based application where users can post blog messages.
 
-4. **Create your own fork of movie-night-planner repository**
+4. **Create your own fork of bootcamp-blog repository**
 
    * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
   ![Create a fork button](img/create-fork-button.png)
    * 3. **Select the organization:** Choose the organization **Bootcamp2025-Pega** to fork the repository into.
-   * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `movie-night-planner-{username}`, replacing `{username}` with your GitHub username.
+   * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
   ![Create a fork](img/create-fork.png)
    * 5. **Create the fork:** Click the "Create fork" button.
 
 5. **Navigate to your repository and get familiar with project**
 
-  * 1. **Navigate to your forked repository:** Go to your personal fork of the `movie-night-planner` repository (named `movie-night-planner-{username}`) on GitHub.
+  * 1. **Navigate to your forked repository:** Go to your personal fork of the `bootcamp-blog` repository (named `bootcamp-blog-{username}`) on GitHub.
   * 2. **Explore the codebase:** Familiarize yourself with the project structure, files, and code. Pay attention to the `README.md` file, which provides an overview of the application.
 
 6. **Run application in Codespaces**
 
-    * 1.  **Open Codespaces:** Navigate to your forked `movie-night-planner-{username}` repository on GitHub. Click on the green "Code" button.
+    * 1.  **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
     * 2.  **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
     ![Create codespace](img/create-codespace.png)
     * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
