@@ -149,6 +149,26 @@ In order to integrate Sonar into your project follow those steps:
 
 ### 3.3.6. Static Application Security Testing (SAST)
 
+1.	Create new account on Semgrep (this can be done via Sign in with Github)
+2.	Go to Projects tab 
+![Semgrep - Projects](img/semgrep/ad2.png)
+3.  Select Scan new project
+![Semgrep - Projects](img/semgrep/ad3.png)
+4.	Select Semgrep Managed Scans
+5.	Select GitHub
+6.	Connect to GitHub
+7.	Clisk Add other GitHub organization
+8.	Select Bootcamp2025-Pega
+9.	Select All repositories
+10.	Install & Authorize 
+11.	 You should now see Bootcamp2025-Pega organization listed in Semgrep, select it and click Continue
+12.	Paste organization name and click Register GitHub App
+![Semgrep - Projects](img/semgrep/ad12.png)
+13. Create GitHub App got `Bootcamp2025-Pega-<unique_name>` the app name has to be unique across GitHub
+![Semgrep - Projects](img/semgrep/ad13.png)
+14.	Click Install
+![Semgrep - Projects](img/semgrep/ad14.png)
+
 ### 3.3.7. Software Composition Analysis (SCA)
 
 ### 3.3.8. ...
@@ -343,6 +363,48 @@ npx prisma db push
 ```
 You should see following output:
 ![prisma-1](img/prisma1.png)
+
+
+# Creating OAuth Apps in GitHub
+
+To create an OAuth app in GitHub, follow these steps:
+
+### Step 1: Navigate to GitHub Settings
+
+1. Go to GitHub and log in to your account.
+2. In the upper-right corner of any page, click your profile photo, then click **Settings**.
+
+### Step 2: Register a New OAuth Application
+
+1. In the left sidebar, click **Developer settings**.
+2. In the left sidebar, click **OAuth Apps**.
+3. Click **New OAuth App**.
+![oauth1-1](img/oauth1.png)
+
+### Step 3: Fill in the Application Details
+
+1. **Application name**: Enter a name for your application. This name will be displayed to users when they are asked to grant access to your application `<project name>.vercel.app`.
+2. **Homepage URL**: Enter the URL of your application's homepage `https://<project name>.vercel.app`.
+3. **Authorization callback URL**: Enter the URL where users will be sent after they authorize with GitHub. This URL should be a route in your application that handles the OAuth callback. `https://<project name>.vercel.app/api/auth/callback/github`
+![oauth1-1](img/oauth3.png)
+
+### Step 4: Register the Application
+
+1. Click **Register application**.
+2. After registering, you will be redirected to the application's page where you can see the **Client ID** and **Client Secret**. These credentials are used to authenticate your application with GitHub.
+
+### Step 5: Configure Environment Variables
+
+1. In your GitHub project, store the **Client ID** and **Client Secret** as secret variables:
+ - NEXTAUTH_URL = `https://<project name>.vercel.app/api/auth`
+ - OAUTH_SECRET =  paste e.g. `verystrongsecret`
+ - OAUTH_GITHUB_ID = **Client ID**
+ - OAUTH_GITHUB_SECRET = **Client Secret**
+ ![oauth1-1](img/oauth4.png)
+
+
+
+
 
 
 

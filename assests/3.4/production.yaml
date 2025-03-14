@@ -18,10 +18,10 @@ jobs:
         run: npm i -g vercel
       - name: Set Environment Variables
         run: |
-            echo -n ${{ secrets.OAUTH_GITHUB_ID }} | vercel env add GITHUB_ID production --token=${{ secrets.VERCEL_TOKEN }}
-            echo -n ${{ secrets.OAUTH_GITHUB_SECRET }} | vercel env add GITHUB_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
-            echo -n ${{ secrets.OAUTH_SECRET }} | vercel env add NEXTAUTH_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
-            echo -n ${{ secrets.NEXTAUTH_URL }} | vercel env add NEXTAUTH_URL production --token=${{ secrets.VERCEL_TOKEN }}  
+            echo -n $GITHUB_ID | vercel env add GITHUB_ID production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $GITHUB_SECRET | vercel env add GITHUB_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $NEXTAUTH_SECRET | vercel env add NEXTAUTH_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $NEXTAUTH_URL | vercel env add NEXTAUTH_URL production --token=${{ secrets.VERCEL_TOKEN }} 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
