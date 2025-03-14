@@ -92,14 +92,11 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
     * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
     * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
     ```bash
-    # Run npm install:
+    docker compose up -d
     npm install
-    cd backend && docker-compose up
-    # Run frontend
+    npx prisma db push
     npm run dev
     ```
-    
-    **TODO**
     
     * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Check the terminal output for the URL. Click on the URL to open the application in a new browser tab.
     ![Forwarded port](img/forwarded-port.png) (**TODO**).
