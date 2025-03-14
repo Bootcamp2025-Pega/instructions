@@ -98,8 +98,8 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
     npm run dev
     ```
     
-    * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Check the terminal output for the URL. Click on the URL to open the application in a new browser tab.
-    ![Forwarded port](img/forwarded-port.png) (**TODO**).
+    * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
+        ![Forwarded port](img/codespaces-open-app.png)
 
 ## 3.3. Module 3: Implementing CI/CD with GitHub Actions
 
