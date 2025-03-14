@@ -115,6 +115,14 @@ Goal: Create basic pipeline that builds project and execute tests.
   
 ### 3.3.2. Execute Unit Tests
 
+Unit tests in the project are using jest framework. If you need to run them, just call `npx jest` in terminal.
+To execute tests in our workflow, locate the `steps` list in your GitHub Actions workflow file (e.g., `.github/workflows/ci.yml`) and add the following step:
+
+```yaml
+      - name: Run tests with coverage
+        run: npx jest
+```
+
 ### 3.3.3. Verify pull request
 
 ### 3.3.4. Static Code Analysis
@@ -140,12 +148,61 @@ In order to integrate Sonar into your project follow those steps:
 ![Security tab](img/sonar-generating-token.png)
 6. Now you need to add token to Github secrets. Enter name and contents of your secret.
 ![Github token](img/sonar-adding-token.png)
-7. You are all set!
+7. Configure project by providing sonar settings file.
 
+ Create a file named `sonar-project.properties` in the root of your project with the following content:
+
+  ```properties
+  # Organization and project keys
+  sonar.organization=bootcamp2025-pega
+  sonar.projectKey=bootcamp2025-pega_<your-repo-name>
+  
+  # Sources
+  sonar.sources=.
+  sonar.exclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
+  
+  # Tests
+  sonar.tests=.
+  sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
+```
+
+8. Configure Sonar Scan Action in your workflow. Add the following step to your workflow:
+```yaml
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+```          
+9. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
 
 ### 3.3.5. Test Coverage
 
-### 3.3.6. ...
+In order to capture coverage, we need to enable it alongside tests.
+
+Add the following content to `module.exports` in the `jest.config.js` file on the ROOT of your project:
+```js
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['lcov', 'text']
+```
+This ensures that coverage is captured.
+
+| **lcov** format is a standard coverage format understood by sonar.
+
+To ensure SonarCloud correctly analyzes your code coverage reports, 
+update sonar-project.properties file and set the paths to `lcov` file:
+  
+  ```properties
+  sonar.javascript.lcov.reportPaths=coverage/lcov.info
+  sonar.coverage.exclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
+  ```
+
+Verify Configuration. After your workflow completes:
+  - Check your SonarCloud dashboard
+  - Verify coverage metrics are displayed
+  - Review the code quality and coverage insights
+
+This integration will help you track code quality and ensure adequate test coverage for your application.
 
 ### 3.3.6. Static Application Security Testing (SAST)
 
