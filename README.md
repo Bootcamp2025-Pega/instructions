@@ -127,9 +127,9 @@ To execute tests in our workflow, locate the `steps` list in your GitHub Actions
 
 ### 3.3.4. Static Code Analysis
 #### **SonarCloud**
-SonarCloud is a cloud-based service designed to continuosly inspect your cose for quality and security issues. What it does:
-* Code Quality Analisys: scans code to detect bugs, code smells, and vulnerabilities
-* Integration: easy integration with CI/CD pipelines, and tools like Github, Bitbucket, Azure DevOps
+SonarCloud is a cloud-based service designed to continuously inspect your cose for quality and security issues. What it does:
+* Code Quality Analysis: scans code to detect bugs, code smells, and vulnerabilities
+* Integration: easy integration with CI/CD pipelines, and tools like GitHub, Bitbucket, Azure DevOps
 * Pull Request decoration: It can provide comments on pull requests with summary of its results
 * Dashboard: Detailed dashboard is available
 
@@ -153,7 +153,6 @@ In order to integrate Sonar into your project follow those steps:
 
   ```properties
   # Organization and project keys
-  sonar.organization=bootcamp2025-pega
   sonar.projectKey=bootcamp2025-pega_<your-repo-name>
   
   # Sources
