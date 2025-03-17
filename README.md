@@ -74,7 +74,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
    * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
   ![Create a fork button](img/create-fork-button.png)
-   * 3. **Select the organization:** Choose the organization **Bootcamp2025-Pega** to fork the repository into.
+   * 3. **Select the organization:** Choose your user space as an organization.
    * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
   ![Create a fork](img/create-fork.png)
    * 5. **Create the fork:** Click the "Create fork" button.
@@ -138,9 +138,9 @@ In order to integrate Sonar into your project follow those steps:
 1. Go to SonarCould [login page](https://sonarcloud.io/login)
 2. Choose login with Github
 ![Login with Github](img/sonar-loging.png)
-3. Grand SonarQubeCloud necessary permissions
+3. Grand SonarQubeCloud necessary permissions to your project
 ![Sonar permisions](img/sonar-authorize.png)
-4. Connect to bootcamp org //TODO!
+4. Configure project binding on the github side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
 5. Generate token. In order to connect Github and Sonar you need to generate token:
 * First go to My Account
 ![My Acocunt](img/generate-token-account.png)
@@ -153,9 +153,10 @@ In order to integrate Sonar into your project follow those steps:
  Create a file named `sonar-project.properties` in the root of your project with the following content:
 
   ```properties
-  # Organization and project keys
-  sonar.organization=bootcamp2025-pega
-  sonar.projectKey=bootcamp2025-pega_<your-repo-name>
+  # Organization name: github username or organization, if repo is assigned to one
+  sonar.organization=<github_username>
+  # Project key on sonar. Default is <org_name>_<your-repo-name>
+  sonar.projectKey=<github_username>_bootcamp-blog-<github_username>
   
   # Sources
   sonar.sources=.
@@ -165,6 +166,8 @@ In order to integrate Sonar into your project follow those steps:
   sonar.tests=.
   sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
 ```
+
+File contains properties to run sonar properly within CI build, and allow us to indicate which files are considered as tests and which are the actual codebase.
 
 8. Configure Sonar Scan Action in your workflow. Add the following step to your workflow:
 ```yaml
