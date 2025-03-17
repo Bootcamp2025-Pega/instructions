@@ -119,6 +119,8 @@ name: CI/CD Pipeline
 # Trigger the workflow on push to main and develop branches, and on pull requests
 on:
     push:
+      tags:
+        - '*'
       branches:
         - main
     pull_request:
@@ -152,6 +154,7 @@ jobs:
       - name: Build
         run: |
           DISABLE_DB_CONNECTION=true npm run build
+
   ```
   * commit changes and push to remote<br>
   `git add .`<br>
@@ -159,9 +162,10 @@ jobs:
   `git push -u origin add-workflow`
 
   * head to the URL provided by git
-  ![alt text](img/pr-creation-terminal.png.png)
-  * you will see context menu for Pull Request creation
-  ![alt text](img/pr-creation.png.png)
+  ![alt text](img/pr-creation-terminal.png)
+  * you will see context menu for Pull Request creation<br>
+  **IMPORTANT**: set `base` (red box) to point to **your** repo, not the BootCamp one
+  ![alt text](img/pr-creation.png)
 
   * adjust the title / add description and click `Create pull request` button
 
@@ -181,9 +185,7 @@ We need to execute tests in our workflow too. Locate the `steps` list in your Gi
 ```
 Create a pull request, wait for validation to pass and merge.
 
-### 3.3.3. Verify pull request
-
-### 3.3.4. Static Code Analysis
+### 3.3.3. Static Code Analysis
 #### **SonarCloud**
 SonarCloud is a cloud-based service designed to continuosly inspect your cose for quality and security issues. What it does:
 * Code Quality Analisys: scans code to detect bugs, code smells, and vulnerabilities
@@ -233,7 +235,7 @@ In order to integrate Sonar into your project follow those steps:
 ```          
 9. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
 
-### 3.3.5. Test Coverage
+### 3.3.4. Test Coverage
 
 In order to capture coverage, we need to enable it alongside tests.
 
@@ -262,7 +264,7 @@ Verify Configuration. After your workflow completes:
 
 This integration will help you track code quality and ensure adequate test coverage for your application.
 
-### 3.3.6. Static Application Security Testing (SAST)
+### 3.3.5. Static Application Security Testing (SAST)
 
 1.	Create new account on Semgrep (this can be done via Sign in with Github)
 2.	Go to Projects tab 
@@ -284,9 +286,16 @@ This integration will help you track code quality and ensure adequate test cover
 14.	Click Install
 ![Semgrep - Projects](img/semgrep/ad14.png)
 
-### 3.3.7. Software Composition Analysis (SCA)
+### 3.3.6. Software Composition Analysis (SCA)
 
-### 3.3.8. ...
+### 3.3.7. Releasing stable version
+After itegrating bunch of changes to `main`, you've finished working on a feature(s) and you need to release a new version. 
+* Go to main view of your repository, on the right-side you'll see `Releases` section. Click on the link <br>
+![alt text](img/releases.png)
+* Type tag name (e.g. v0.1.0), title and description containing changes introduced in new Release. After clicking `Publish release`, GitHub will create new tag (with name you've provided) and will trigger your workflow.<br>
+![alt text](img/releases-page.png)
+* You can then view your release along with its assets
+![alt text](img/releases-final.png)
 
 ## 3.4 Module 4: Deployment to Free-Tier Service
 # How to Create an Account on Vercel
