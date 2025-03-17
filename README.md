@@ -165,7 +165,7 @@ jobs:
 
   * adjust the title / add description and click `Create pull request` button
 
-  * you will see the pull request page. Wait few seconds for **CI/CD Pipeline** check to appear. You can view details of the pipeline run by click its name.
+  * you will see the pull request page. Wait few seconds for **CI/CD Pipeline** check to appear. You can view details of the pipeline run by clicking its name.
   ![alt text](img/pr-overview.png)
 
   * Once the pipeline will pass, merge the PR (`Merge pull request` button).
