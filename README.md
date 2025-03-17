@@ -74,7 +74,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
    * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
   ![Create a fork button](img/create-fork-button.png)
-   * 3. **Select the organization:** Choose the organization **Bootcamp2025-Pega** to fork the repository into.
+   * 3. Please fork project into your private **repository**.
    * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
   ![Create a fork](img/create-fork.png)
    * 5. **Create the fork:** Click the "Create fork" button.
@@ -127,9 +127,9 @@ To execute tests in our workflow, locate the `steps` list in your GitHub Actions
 
 ### 3.3.4. Static Code Analysis
 #### **SonarCloud**
-SonarCloud is a cloud-based service designed to continuosly inspect your cose for quality and security issues. What it does:
-* Code Quality Analisys: scans code to detect bugs, code smells, and vulnerabilities
-* Integration: easy integration with CI/CD pipelines, and tools like Github, Bitbucket, Azure DevOps
+SonarCloud is a cloud-based service designed to continuously inspect your cose for quality and security issues. What it does:
+* Code Quality Analysis: scans code to detect bugs, code smells, and vulnerabilities
+* Integration: easy integration with CI/CD pipelines, and tools like GitHub, Bitbucket, Azure DevOps
 * Pull Request decoration: It can provide comments on pull requests with summary of its results
 * Dashboard: Detailed dashboard is available
 
@@ -140,21 +140,19 @@ In order to integrate Sonar into your project follow those steps:
 ![Login with Github](img/sonar-loging.png)
 3. Grand SonarQubeCloud necessary permissions
 ![Sonar permisions](img/sonar-authorize.png)
-4. Connect to bootcamp org //TODO!
-5. Generate token. In order to connect Github and Sonar you need to generate token:
+4. Generate token. In order to connect Github and Sonar you need to generate token:
 * First go to My Account
 ![My Acocunt](img/generate-token-account.png)
 * Go to Security tab, enter token name of your choosing, generate token
 ![Security tab](img/sonar-generating-token.png)
-6. Now you need to add token to Github secrets. Enter name and contents of your secret.
+5. Now you need to add token to Github secrets. Enter name and contents of your secret.
 ![Github token](img/sonar-adding-token.png)
-7. Configure project by providing sonar settings file.
+6. Configure project by providing sonar settings file.
 
  Create a file named `sonar-project.properties` in the root of your project with the following content:
 
   ```properties
   # Organization and project keys
-  sonar.organization=bootcamp2025-pega
   sonar.projectKey=bootcamp2025-pega_<your-repo-name>
   
   # Sources
