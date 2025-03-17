@@ -103,25 +103,83 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 ## 3.3. Module 3: Implementing CI/CD with GitHub Actions
 
-# TODO
-
 ### 3.3.1. Basic build pipeline
 
 Goal: Create basic pipeline that builds project and execute tests.
 
 1.  **Create a base workflow**
+  * make sure you are on the `main` branch<br>
+  `git branch`
+  * create a new one<br>
+  `git checkout -b add-workflow`
+  * paste the following into `./github/workflows/ci-cd.yaml`
+  ```yaml
+name: CI/CD Pipeline
 
+# Trigger the workflow on push to main and develop branches, and on pull requests
+on:
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
 
+# Global environment variables
+env:
+    NODE_VERSION: '18.x'
+
+jobs:
+    # Lint & Test Job - Runs on all triggers
+    build-and-test:
+      name: Build & Test
+      runs-on: ubuntu-latest
+  
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+
+      - name: Build
+        run: |
+          DISABLE_DB_CONNECTION=true npm run build
+  ```
+  * commit changes and push to remote<br>
+  `git add .`<br>
+  `git commit -m "add basic workflow"`<br>
+  `git push -u origin add-workflow`
+
+  * head to the URL provided by git
+  ![alt text](img/pr-creation-terminal.png.png)
+  * you will see context menu for Pull Request creation
+  ![alt text](img/pr-creation.png.png)
+
+  * adjust the title / add description and click `Create pull request` button
+
+  * you will see the pull request page. Wait few seconds for **CI/CD Pipeline** check to appear. You can view details of the pipeline run by click its name.
+  ![alt text](img/pr-overview.png)
+
+  * Once the pipeline will pass, merge the PR (`Merge pull request` button).
   
 ### 3.3.2. Execute Unit Tests
 
 Unit tests in the project are using jest framework. If you need to run them, just call `npx jest` in terminal.
-To execute tests in our workflow, locate the `steps` list in your GitHub Actions workflow file (e.g., `.github/workflows/ci.yml`) and add the following step:
+We need to execute tests in our workflow too. Locate the `steps` list in your GitHub Actions workflow file (`.github/workflows/ci-cd.yml`) and add the following step:
 
 ```yaml
       - name: Run tests with coverage
         run: npx jest
 ```
+Create a pull request, wait for validation to pass and merge.
 
 ### 3.3.3. Verify pull request
 
