@@ -112,7 +112,7 @@ Goal: Create basic pipeline that builds project and execute tests.
   `git branch`
   * create a new one<br>
   `git checkout -b add-workflow`
-  * paste the following into `./github/workflows/ci-cd.yaml`
+  * paste the following into `/.github/workflows/ci-cd.yaml`
   ```yaml
 name: CI/CD Pipeline
 
