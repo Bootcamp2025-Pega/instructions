@@ -269,14 +269,7 @@ In order to integrate Sonar into your project follow those steps:
   sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
 ```
 
-16. Configure Sonar Scan Action in your workflow. Add the following step to your workflow:
-```yaml
-     - name: SonarCloud Scan
-       uses: SonarSource/sonarcloud-github-action@master
-       env:
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-```          
-17. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
+16. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
 
 ### 3.3.4. Test Coverage
 
