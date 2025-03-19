@@ -27,10 +27,10 @@
             <ul>
             <li>Marek Jagielski - DevOps Manager</li>
             <li>Piotr Kucia - Senior Principal DevOps Engineer</li>
-            <li>M B - Senior Principal DevOps Engineer</li>
-            <li>K D - DevOps Engineer</li>
-            <li>B K - DevOps Engineer</li>
-            <li>P J - DevSecOps Engineer</li>
+            <li>Maksymilian Baran - Senior Principal DevOps Engineer</li>
+            <li>Kacper Derlatka - DevOps Engineer</li>
+            <li>Piotr Januszek - DevSecOps Engineer</li>
+            <li>Barbara Komorniczak - DevOps Engineer</li>
             </ul>
         </section>
         <section>
@@ -46,20 +46,16 @@
             <p>
               <table>
                 <tr>
-                  <td>10 min</td>
+                  <td>30 min</td>
                   <td>SDLC</td>
                 </tr>
                 <tr>
                   <td>10 min</td>
-                  <td>GitHub Repository and Environment Setup</td>
+                  <td>Environment setup</td>
                 </tr>
                 <tr>
                   <td>1h30</td>
                   <td>Implementing CI/CD with GitHub Actions</td>
-                </tr>
-                <tr>
-                  <td>30 min</td>
-                  <td>Deployment</td>
                 </tr>
                 <tr>
                   <td>10 min.</td>
@@ -80,25 +76,206 @@
           </section>
         </section>
         <section>
-          <h3>Git flow</h3>
-        </section>
+          <section>
+            <h3>SDLC</h3>
+            <img src="img/devops.png">
+            <aside class="notes">
+              <ul>
+                <li>Software Development Life Cycle (SDLC) is a process used by the software industry to design, develop, and test high-quality software.</li>
+                <li>SDLC aims to produce high-quality software that meets or exceeds customer expectations, reaches completion within times and cost estimates.</li>
+                <li>SDLC is a series of steps that provide a framework for developing software and managing it through its entire lifecycle.</li>
+                <li>SDLC is a process that defines the various stages involved in the development of software for delivering a high-quality product.</li>
+                <li>In simple words - we make developers job easier</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Our flow</h3>
+            <img src="img/your-flow.png" alt="Your flow" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+          </section>
         <section>
           <h3>Pipelines - Github actions</h3>
+          <img src="img/workflow.png" alt="Github actions" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+          <aside class="notes">
+            <ul>
+            <li>
+              GitHub Actions is a CI/CD tool that allows you to automate your workflow.
+            </li>
+            <li>
+              You can create custom workflows that run on GitHub events like push, pull request, issue, etc.
+            </li>
+            <li>
+              You can use GitHub Actions to build, test, and deploy your code.
+            </li>
+            <li>
+              GitHub Actions is free for public repositories and offers free minutes for private repositories.
+            </li>
+            <li>
+              GitHub Actions is easy to set up and use, and it integrates well with GitHub.
+            </li>
+            <li>
+              You can use GitHub Actions to automate your CI/CD pipeline and save time and effort.
+            </li>
+              <li>
+                Github actions are defined in .github/workflows directory.
+              </li>
+              <li>
+              Workflow is defined in YAML format. It consists of jobs, steps, and actions.
+              </li>
+            </ul>
+          </aside>
         </section>
+          <section>
+            <h3>Some stages in detail</h3>
+          </section>
         <section>
           <h3>Static code analyses</h3>
-        </section>
-        <section>
-          <h3>Test coverage</h3>
+          <img src="img/sca.png" alt="Static code analysis" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+          <aside class="notes">
+            <ul>
+              <li>
+                Static code analysis is a method of debugging by examining source code before a program is run.
+              </li>
+              <li>
+                It's done by analyzing a set of code against a set (or multiple sets) of coding rules.
+              </li>
+              <li>
+                Static code analysis can be done by tools like SonarQube, CodeClimate, or ESLint.
+              </li>
+              <li>
+                Static code analysis can help identify potential security vulnerabilities, code smells, and bugs.
+              </li>
+              <li>
+                Static code analysis can be integrated into your CI/CD pipeline to automate the process.
+              </li>
+              <li>
+                Static code analysis can help improve code quality and reduce technical debt.
+              </li>
+            </ul>
+          </aside>
         </section>
         <section>
           <h3>Static Application Security Testing (SAST)</h3>
+          <aside class="notes">
+            <ul>
+              <li>
+                Static Application Security Testing (SAST) is a type of security testing that is performed without executing the code.
+              </li>
+              <li>
+                SAST tools analyze the source code or compiled code to identify security vulnerabilities.
+              </li>
+              <li>
+                SAST tools can help identify security vulnerabilities such as SQL injection, cross-site scripting, and buffer overflows, hardcoded secrets, insecure dependencies, unvalidated inputs.
+              </li>
+              <li>
+                SAST tools can be integrated into your CI/CD pipeline to automate the process.
+              </li>
+              <li>
+                SAST tools can help improve the security of your code and reduce the risk of security breaches.
+              </li>
+            </ul>
+          </aside>
         </section>
-        <section>
-          <h3>Software Composition Analysis (SCA)</h3>
-        </section>
+          <section>
+            <h3>Software Composition Analysis (SCA)</h3>
+            <aside class="notes">
+              <ul>
+                <li>
+                  Software Composition Analysis (SCA) is a method of identifying and tracking the open-source components used in a project.
+                </li>
+                <li>
+                  SCA tools scan your project's dependencies to identify known security vulnerabilities and licensing issues.
+                </li>
+                <li>
+                  SCA tools can help you manage your project's dependencies and ensure that you are using secure and compliant components.
+                </li>
+                <li>
+                  SCA tools can be integrated into your CI/CD pipeline to automate the process.
+                </li>
+                <li>
+                  SCA tools can help you reduce the risk of security vulnerabilities and licensing issues in your project.
+                </li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+<table style="font-size: 0.8em; border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Software Composition Analysis</th>
+      <th>Static Code Analysis</th>
+      <th>Static Application Security Testing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Focus</td>
+      <td>Open source dependencies</td>
+      <td>Code quality & maintainability</td>
+      <td>Security vulnerabilities</td>
+    </tr>
+    <tr>
+      <td>Checks for</td>
+      <td>License compliance, CVEs</td>
+      <td>Bugs, duplication style issues</td>
+      <td>Security vulnerabilities like SQL injection</td>
+    </tr>
+    <tr>
+      <td>Tools</td>
+      <td>Snyk, WhiteSource</td>
+      <td>SonarQube, ESLint</td>
+      <td>Semgrep, Fortify, Veracode</td>
+    </tr>
+  </tbody>
+</table>
+          </section>
+          <section>
+            <h3>Test coverage</h3>
+            <img src="img/code-coverage.png" alt="Test coverage" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+            <aside class="notes">
+              <ul>
+                <li>
+                  Measures how much of your code is executed by tests
+                </li>
+                <li>
+                  Helps to identify untested code
+                </li>
+                <li>
+                  Question: Is it good to require 100% test coverage?
+                </li>
+              </ul>
+            </aside>
+          </section>
         <section>
           <h3>Deployment</h3>
+          <img src="img/vercel.png" alt="Deployment" style=" margin: 0 auto 0 auto; background: whitesmoke;">
+          <aside class="notes">
+            <ul>
+              <li>
+                Deployment is the process of moving code from a development environment to a production environment.
+              </li>
+              <li>
+                Deployment can be done manually or automatically using CI/CD tools.
+              </li>
+              <li>
+                Deployment can be done to on-premises servers, cloud servers, or serverless platforms.
+              </li>
+              <li>
+                Deployment can be done using tools like Jenkins, GitHub Actions, or AWS CodeDeploy.
+              </li>
+              <li>
+                Deployment can be done using blue-green deployment, canary deployment, or rolling deployment.
+              </li>
+              <li>
+                Deployment can be done using containers, serverless functions, or virtual machines.
+              </li>
+            </ul>
+          </aside>
+        </section>
+        </section>
+        <section>
+          <h3>Let's get to it</h3>
         </section>
       </div>
     </div>
@@ -107,4 +284,27 @@
       Reveal.initialize();
     </script>
   </body>
+  <style>
+    table {
+      font-size: 0.8em;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #333; /* Dark background for the table */
+      color: #fff; /* White text color for better contrast */
+    }
+    th, td {
+      border: 1px solid #555; /* Slightly lighter border color */
+      padding: 8px;
+    }
+    th {
+      background-color: #444; /* Darker background for headers */
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #3a3a3a; /* Alternating row color */
+    }
+    tr:hover {
+      background-color: #555; /* Highlight color on hover */
+    }
+  </style>
 </html>
