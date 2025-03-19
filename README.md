@@ -297,26 +297,28 @@ Verify Configuration. After your workflow completes:
 This integration will help you track code quality and ensure adequate test coverage for your application.
 
 ### 3.3.5. Static Application Security Testing (SAST)
+1. Follow [GitHub instruction](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository) to enable CodeQL scans on your repository.
 
-1.	Create new account on ![Semgrep](https://semgrep.dev/) (this can be done via Sign in with Github)
-2.	Go to Projects tab 
-![Semgrep - Projects](img/semgrep/ad2.png)
-3.  Select Scan new project
-![Semgrep - Projects](img/semgrep/ad3.png)
-4.	Select Semgrep Managed Scans
-5.	Select GitHub
-6.	Connect to GitHub
-7.	Clisk Add other GitHub organization
-8.	Select Bootcamp2025-Pega
-9.	Select All repositories
-10.	Install & Authorize 
-11.	 You should now see Bootcamp2025-Pega organization listed in Semgrep, select it and click Continue
-12.	Paste organization name and click Register GitHub App
-![Semgrep - Projects](img/semgrep/ad12.png)
-13. Create GitHub App got `Bootcamp2025-Pega-<unique_name>` the app name has to be unique across GitHub
-![Semgrep - Projects](img/semgrep/ad13.png)
-14.	Click Install
-![Semgrep - Projects](img/semgrep/ad14.png)
+2. Chackout to new branch
+3. Add below code block to `handle(req, res)` method in [pages/api/publish/[id].ts](https://github.com/Bootcamp2025-Pega/bootcamp-blog/blob/main/pages/api/publish/%5Bid%5D.ts)
+```ts
+  const { url } = req.query;
+  try {
+    // Make a GET request to the provided URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      return res.status(400).json({ message: 'Failed to fetch from the provided URL' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'Internal server error' });
+  }
+```
+It should look like this:
+![Semgrep - Projects](img/sast/code_snippet01.png)
+
+3. Push changes to remote brach and create a Pull Request
+4. Wait for CodeQL analysis to finish and review issue found.
+
 
 ### 3.3.6. Software Composition Analysis (SCA)
 
