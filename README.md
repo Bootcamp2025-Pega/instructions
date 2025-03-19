@@ -44,8 +44,8 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 | -------------- | --------------------------------------- |
 | 0:00 - 0:20    | [SDLC Overview](https://bootcamp2025-pega.github.io/instructions/) |
 | 0:20 - 0:30    | GitHub Repository and Environment Setup |
-| 0:30 - 2:30    | Implementing CI/CD with GitHub Actions  |
-| 2:30 - 3:00    | Summary & Closing Remarks               |
+| 0:30 - 2:40    | Implementing CI/CD with GitHub Actions  |
+| 2:40 - 3:00    | Summary & Closing Remarks               |
 
 # 3. Steps to Follow
 
@@ -56,7 +56,6 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 1.  **Navigate to the Bootcamp Organization**
 
   *   Go to the [Bootcamp2025-Pega organization on GitHub](https://github.com/Bootcamp2025-Pega).
-  *   If you've provided your GitHub username to the organizers, you should already be a member. If not, please inform the organizers to be added.
   
 2.  **Navigate to the Instructions Repository**
 
@@ -69,10 +68,14 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 4. **Create your own fork of bootcamp-blog repository**
 
    * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
-  ![Create a fork button](img/create-fork-button.png)
+
+   <img src="img/create-fork-button.png" width="250">
+
    * 3. **Select the organization:** Choose your user space as an organization.
    * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
-  ![Create a fork](img/create-fork.png)
+
+   <img src="img/create-fork.png" width="450">
+
    * 5. **Create the fork:** Click the "Create fork" button.
 
 5. **Navigate to your repository and get familiar with project**
