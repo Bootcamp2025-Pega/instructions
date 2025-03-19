@@ -302,7 +302,7 @@ This integration will help you track code quality and ensure adequate test cover
 
 ### 3.3.5. Static Application Security Testing (SAST)
 
-1.	Create new account on Semgrep (this can be done via Sign in with Github)
+1.	Create new account on ![Semgrep](https://semgrep.dev/) (this can be done via Sign in with Github)
 2.	Go to Projects tab 
 ![Semgrep - Projects](img/semgrep/ad2.png)
 3.  Select Scan new project

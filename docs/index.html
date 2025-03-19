@@ -29,8 +29,8 @@
             <li>Piotr Kucia - Senior Principal DevOps Engineer</li>
             <li>Maksymilian Baran - Senior Principal DevOps Engineer</li>
             <li>Kacper Derlatka - DevOps Engineer</li>
-            <li>Barbara Komorniczak - DevOps Engineer</li>
             <li>Piotr Januszek - DevSecOps Engineer</li>
+            <li>Barbara Komorniczak - DevOps Engineer</li>
             </ul>
         </section>
         <section>
@@ -51,15 +51,11 @@
                 </tr>
                 <tr>
                   <td>10 min</td>
-                  <td>GitHub Repository and Environment Setup</td>
+                  <td>Environment setup</td>
                 </tr>
                 <tr>
                   <td>1h30</td>
                   <td>Implementing CI/CD with GitHub Actions</td>
-                </tr>
-                <tr>
-                  <td>10 min</td>
-                  <td>Deployment</td>
                 </tr>
                 <tr>
                   <td>10 min.</td>
@@ -159,23 +155,6 @@
           </aside>
         </section>
         <section>
-          <h3>Test coverage</h3>
-          <img src="img/code-coverage.png" alt="Test coverage" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
-          <aside class="notes">
-            <ul>
-              <li>
-                Measures how much of your code is executed by tests
-              </li>
-              <li>
-                Helps to identify untested code
-              </li>
-              <li>
-                Question: Is it good to require 100% test coverage?
-              </li>
-            </ul>
-          </aside>
-        </section>
-        <section>
           <h3>Static Application Security Testing (SAST)</h3>
           <aside class="notes">
             <ul>
@@ -220,38 +199,53 @@
             </aside>
           </section>
           <section>
-            <table style="font-size: 0.8em;">
-              <tr>
-                <td>Feasture</td>
-                <td>SCA</td>
-                <td>Static Code Analysis</td>
-                <td>SAST</td>
-              </tr>
-              <tr>
-                <td>Focus</td>
-                <td>Open source dependencies</td>
-                <td>Code quality & maintainability </td>
-                <td>Security vulnerabilities</td>
-              </tr>
-              <tr>
-                <td> Checks for</td>
-                <td> License compliance, CVEs</td>
-                <td> Bugs, duplication style issues</td>
-                <td> Security vulnerabilities like SQL injection</td>
-              </tr>
-              <tr>
-                <td> When to use</td>
-                <td> Durign developments & CI/CD</td>
-                <td> During development</td>
-                <td> Security audits, CI/CD</td>
-              </tr>
-              <tr>
-                <td> Tools</td>
-                <td> Snyk, WhiteSource</td>
-                <td> SonarQube, ESLint</td>
-                <td> Checkmarx, Fortify, Veracode</td>
-              </tr>
-            </table>
+<table style="font-size: 0.8em; border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Software Composition Analysis</th>
+      <th>Static Code Analysis</th>
+      <th>Static Application Security Testing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Focus</td>
+      <td>Open source dependencies</td>
+      <td>Code quality & maintainability</td>
+      <td>Security vulnerabilities</td>
+    </tr>
+    <tr>
+      <td>Checks for</td>
+      <td>License compliance, CVEs</td>
+      <td>Bugs, duplication style issues</td>
+      <td>Security vulnerabilities like SQL injection</td>
+    </tr>
+    <tr>
+      <td>Tools</td>
+      <td>Snyk, WhiteSource</td>
+      <td>SonarQube, ESLint</td>
+      <td>Semgrep, Fortify, Veracode</td>
+    </tr>
+  </tbody>
+</table>
+          </section>
+          <section>
+            <h3>Test coverage</h3>
+            <img src="img/code-coverage.png" alt="Test coverage" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+            <aside class="notes">
+              <ul>
+                <li>
+                  Measures how much of your code is executed by tests
+                </li>
+                <li>
+                  Helps to identify untested code
+                </li>
+                <li>
+                  Question: Is it good to require 100% test coverage?
+                </li>
+              </ul>
+            </aside>
           </section>
         <section>
           <h3>Deployment</h3>
@@ -290,4 +284,27 @@
       Reveal.initialize();
     </script>
   </body>
+  <style>
+    table {
+      font-size: 0.8em;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #333; /* Dark background for the table */
+      color: #fff; /* White text color for better contrast */
+    }
+    th, td {
+      border: 1px solid #555; /* Slightly lighter border color */
+      padding: 8px;
+    }
+    th {
+      background-color: #444; /* Darker background for headers */
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #3a3a3a; /* Alternating row color */
+    }
+    tr:hover {
+      background-color: #555; /* Highlight color on hover */
+    }
+  </style>
 </html>
