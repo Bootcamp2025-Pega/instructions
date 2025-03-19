@@ -321,6 +321,12 @@ This integration will help you track code quality and ensure adequate test cover
 
 
 ### 3.3.6. Software Composition Analysis (SCA)
+1. Go to Security tab in your Gtihub repository
+2. Click "Enable Dependabot alerts"
+![alt text](img/sast/dependabot01.png)
+3. Click "Enable" on Dependabot Alerts 
+![alt text](img/sast/dependabot02.png)
+4. Go back to Security tab and review Dependabot findings 
 
 ### 3.3.7. Releasing stable version
 After itegrating bunch of changes to `main`, you've finished working on a feature(s) and you need to release a new version. 
