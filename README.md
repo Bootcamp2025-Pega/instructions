@@ -199,12 +199,54 @@ In order to integrate Sonar into your project follow those steps:
 4. Configure project binding on the github side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
 5. Generate token. In order to connect Github and Sonar you need to generate token:
 * First go to My Account
+
+4. Connect to bootcamp org
+
+5. Click on + sign and choose Analyze new project
+
+![Sonar add](img/sonar-add-org1.png)
+
+6. Choose "Import another organization"
+
+![Sonar add 2](img/sonar-add-org2.png)
+
+7. Import from Github
+
+![Sonar add 3](img/sonar-add-org3.png)
+
+8. Choose GitHub
+
+![Sonar add 4](img/sonar-add-org4.png)
+
+9. Choose your **private account**
+
+![Sonar add 5](img/sonar-add-org5.png)
+
+10. Choose free plan and create organization
+11. Analyse new project
+
+![Sonar add 6](img/sonar-add-org6.png)
+
+12. Choose your repository and set it up
+
+![Sonar add 7](img/sonar-add-org7.png)
+
+13. Choose Previous version and create project
+
+![Sonar add 8](img/sonar-add-org8.png)
+
+14. Generate token. In order to connect Github and Sonar you need to generate token:
+  * First go to My Account
+
 ![My Acocunt](img/generate-token-account.png)
-* Go to Security tab, enter token name of your choosing, generate token
+  * Go to Security tab, enter token name of your choosing, generate token
+
 ![Security tab](img/sonar-generating-token.png)
-6. Now you need to add token to Github secrets. Enter name and contents of your secret.
+
+* Now you need to add token to Github secrets. Enter name and contents of your secret.
+
 ![Github token](img/sonar-adding-token.png)
-7. Configure project by providing sonar settings file.
+15. Configure project by providing sonar settings file.
 
  Create a file named `sonar-project.properties` in the root of your project with the following content:
 
@@ -223,16 +265,7 @@ In order to integrate Sonar into your project follow those steps:
   sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
 ```
 
-File contains properties to run sonar properly within CI build, and allow us to indicate which files are considered as tests and which are the actual codebase.
-
-8. Configure Sonar Scan Action in your workflow. Add the following step to your workflow:
-```yaml
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v5.0.0
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-```          
-9. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
+16. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
 
 ### 3.3.4. Test Coverage
 
@@ -265,7 +298,7 @@ This integration will help you track code quality and ensure adequate test cover
 
 ### 3.3.5. Static Application Security Testing (SAST)
 
-1.	Create new account on Semgrep (this can be done via Sign in with Github)
+1.	Create new account on ![Semgrep](https://semgrep.dev/) (this can be done via Sign in with Github)
 2.	Go to Projects tab 
 ![Semgrep - Projects](img/semgrep/ad2.png)
 3.  Select Scan new project
