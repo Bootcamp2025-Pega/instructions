@@ -28,8 +28,6 @@ Before the bootcamp starts, please ensure the following:
   
   Create a free GitHub account if you don’t already have one.
 
-* Share your GitHub username with the Bootcamp organizers so they can add you to the Bootcamp2025-Pega organization.
-
 # 2. Agenda
 
 ## 2.1. High-level
