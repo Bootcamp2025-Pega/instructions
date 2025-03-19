@@ -313,11 +313,11 @@ This integration will help you track code quality and ensure adequate test cover
     res.status(500).json({ message: 'Internal server error' });
   }
 ```
-It should look like this:
+  It should look like this:
 ![Semgrep - Projects](img/sast/code_snippet01.png)
 
-3. Push changes to remote brach and create a Pull Request
-4. Wait for CodeQL analysis to finish and review issue found.
+4. Push changes to remote brach and create a Pull Request
+5. Wait for CodeQL analysis to finish and review issue found.
 
 
 ### 3.3.6. Software Composition Analysis (SCA)
