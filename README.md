@@ -67,16 +67,16 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 4. **Create your own fork of bootcamp-blog repository**
 
-  * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
+* **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
 
   <img src="img/create-fork-button.png" width="250">
 
-  * 3. **Select the organization:** Choose your user space as an organization.
-  * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
+  * **Select the organization:** Choose your user space as an organization.
+  * **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
 
   <img src="img/create-fork.png" width="450">
 
-  * 5. **Create the fork:** Click the "Create fork" button.
+  * **Create the fork:** Click the "Create fork" button.
 
 5. **Navigate to your repository and get familiar with project**
 
@@ -85,11 +85,11 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 6. **Run application in Codespaces**
 
-  * 1.  **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
-  * 2.  **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
+  * 1. **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
+  * 2. **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
   <img src="img/create-codespace.png" width="450">
-  * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
-  * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
+  * 3. **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
+  * 4. **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
     
   ```bash
   docker compose up -d
