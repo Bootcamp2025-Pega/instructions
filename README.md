@@ -81,7 +81,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 5. **Navigate to your repository and get familiar with project**
 
   * 1. **Navigate to your forked repository:** Go to your personal fork of the `bootcamp-blog` repository (named `bootcamp-blog-{username}`) on GitHub.
-  * 2. **Explore the codebase:** Familiarize yourself with the project structure, files, and code. Pay attention to the `README.md` file, which provides an overview of the application.
+  * 2. **Explore the codebase:** Familiarize yourself with the project structure, files, and code.
 
 6. **Run application in Codespaces**
 
@@ -111,6 +111,7 @@ Goal: Create basic pipeline that builds project and execute tests.
   `git branch`
   * create a new one<br>
   `git checkout -b add-workflow`
+  * create file ci-cd.yaml `mkdir -p .github/workflows && touch .github/workflows/ci-cd.yaml`
   * paste the following into `/.github/workflows/ci-cd.yaml`
   ```yaml
 name: CI/CD Pipeline
@@ -186,7 +187,7 @@ Create a pull request, wait for validation to pass and merge.
 
 ### 3.3.3. Static Code Analysis
 #### **SonarCloud**
-SonarCloud is a cloud-based service designed to continuosly inspect your cose for quality and security issues. What it does:
+SonarCloud is a cloud-based service designed to continuosly inspect your code for quality and security issues. What it does:
 * Code Quality Analisys: scans code to detect bugs, code smells, and vulnerabilities
 * Integration: easy integration with CI/CD pipelines, and tools like Github, Bitbucket, Azure DevOps
 * Pull Request decoration: It can provide comments on pull requests with summary of its results
@@ -199,7 +200,7 @@ In order to integrate Sonar into your project follow those steps:
 ![Login with Github](img/sonar-loging.png)
 3. Grand SonarQubeCloud necessary permissions to your project
 ![Sonar permisions](img/sonar-authorize.png)
-4. Configure project binding on the github side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
+4. Configure project binding on the GitHub side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
 5. Generate token. In order to connect Github and Sonar you need to generate token:
 * First go to My Account
 
@@ -568,14 +569,4 @@ To create an OAuth app in GitHub, follow these steps:
  - OAUTH_GITHUB_ID = **Client ID**
  - OAUTH_GITHUB_SECRET = **Client Secret**
  ![oauth1-1](img/oauth4.png)
-
-
-
-
-
-
-
-
-
-### 3.4.1. TODO
 
