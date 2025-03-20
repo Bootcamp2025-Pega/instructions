@@ -88,6 +88,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
   * **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
   * **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
   <img src="img/create-codespace.png" width="450">
+  
   * **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
   * **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
     
