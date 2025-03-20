@@ -385,7 +385,7 @@ Detailed instruction explaining above steps can be found in [GitHub doc](https:/
 ![alt text](img/sast/dependabot02.png)
 4. Go back to Security tab and review Dependabot findings 
 ![alt text](img/sast/dependabot03.png)
-Additionally Pull Request should be automatically created that suggest updating vulnerable library to vulnerability-free version
+Additionally, Pull Request should be automatically created that updates vulnerable library to vulnerability-free version.
 
 ### 3.3.7. Releasing stable version
 After itegrating bunch of changes to `main`, you've finished working on a feature(s) and you need to release a new version. 
