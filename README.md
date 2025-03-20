@@ -87,6 +87,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
   * **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
   * **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
+  
   <img src="img/create-codespace.png" width="450">
   
   * **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
@@ -99,10 +100,10 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
   npm run dev
   ```
     
-  * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
+  * **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
   ![Forwarded port](img/codespaces-open-app.png)
 
-  * 6. **Allow log in into dev mode** Copy `Forwarded Address.` Go to `Terminal` tab and close the application (Ctrl^C). Open the .env file and add the following code
+  * **Allow log in into dev mode** Copy `Forwarded Address.` Go to `Terminal` tab and close the application (Ctrl^C). Open the .env file and add the following code
     
   ```bash
   NEXTAUTH_URL=<copied_forwarded_address>/api/auth
