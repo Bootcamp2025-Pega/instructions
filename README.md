@@ -313,7 +313,7 @@ You will then see a "CodeQL default configuration" dialog summarizing the code s
 
 Detailed instruction explaining above steps can be found in [GitHub doc](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository)
 
-6. Chackout to new branch
+6. Checkout to new branch
 7. Add below code block to `handle(req, res)` method in [pages/api/publish/[id].ts](https://github.com/Bootcamp2025-Pega/bootcamp-blog/blob/main/pages/api/publish/%5Bid%5D.ts)
 ```ts
   const { url } = req.query;
