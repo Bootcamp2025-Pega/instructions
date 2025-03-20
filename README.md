@@ -210,7 +210,7 @@ In order to integrate Sonar into your project follow those steps:
 1. Go to SonarCould [login page](https://sonarcloud.io/login)
 
 1. Choose login with Github
-![Login with Github](img/sonar-loging.png)
+![Login with Github](img/sonar-loging1.png)
 
 1. Grand SonarQubeCloud necessary permissions to your project
 ![Sonar permisions](img/sonar-authorize.png)
