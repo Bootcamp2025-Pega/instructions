@@ -701,4 +701,4 @@ you will see the pull request page. Wait few seconds for **CI/CD Pipeline** chec
 
 Once the pipeline will pass, merge the PR (`Merge pull request` button).
 
-Now, every time a tag is created, a workflow will be started that will deploy the tag version to production.
+Every time a tag is created, a workflow will be started that will deploy the tag version to production. Once the deployment.yaml workflow is completed, we can access the production application using the link `https://<project name>.vercel.app`
