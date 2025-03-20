@@ -207,72 +207,107 @@ In order to integrate Sonar into your project follow those steps:
 1. Configure project binding on the GitHub side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
 
 1. Generate token. In order to connect Github and Sonar you need to generate token:
-* First go to My Account
+    * First go to My Account  
 
 1. Click on + sign and choose Analyze new project
+    
+    ![Sonar add](img/sonar-add-org1.png)
 
-![Sonar add](img/sonar-add-org1.png)
+1. Choose "Import another organization"
 
-6. Choose "Import another organization"
+    ![Sonar add 2](img/sonar-add-org2.png)
 
-![Sonar add 2](img/sonar-add-org2.png)
+1. Import from Github
 
-7. Import from Github
+    ![Sonar add 3](img/sonar-add-org3.png)
 
-![Sonar add 3](img/sonar-add-org3.png)
+1. Choose GitHub
 
-8. Choose GitHub
+    ![Sonar add 4](img/sonar-add-org4.png)
 
-![Sonar add 4](img/sonar-add-org4.png)
+1. Choose your **private account**
 
-9. Choose your **private account**
+    ![Sonar add 5](img/sonar-add-org5.png)
 
-![Sonar add 5](img/sonar-add-org5.png)
+1. Choose free plan and create organization
 
-10. Choose free plan and create organization
-11. Analyse new project
+1. Analyse new project
 
-![Sonar add 6](img/sonar-add-org6.png)
+    ![Sonar add 6](img/sonar-add-org6.png)
 
-12. Choose your repository and set it up
+1. Choose your repository and set it up
 
-![Sonar add 7](img/sonar-add-org7.png)
+    ![Sonar add 7](img/sonar-add-org7.png)
 
-13. Choose Previous version and create project
+1. Choose Previous version and create project
 
-![Sonar add 8](img/sonar-add-org8.png)
+    ![Sonar add 8](img/sonar-add-org8.png)
 
-14. Generate token. In order to connect Github and Sonar you need to generate token:
-  * First go to My Account
+1. Generate token. In order to connect Github and Sonar you need to generate token:
+    * First go to My Account
 
-![My Acocunt](img/generate-token-account.png)
-  * Go to Security tab, enter token name of your choosing, generate token
+        ![My Acocunt](img/generate-token-account.png)
+    * Go to Security tab, enter token name of your choosing, generate token
 
-![Security tab](img/sonar-generating-token.png)
+        ![Security tab](img/sonar-generating-token.png)
 
-* Now you need to add token to Github secrets (`SONAR_TOKEN`). Enter name and contents of your secret.
+    * Now you need to add token to Github secrets (`SONAR_TOKEN`). Enter name and contents of your secret.
 
-![Github token](img/sonar-adding-token.png)
-15. Configure project by providing sonar settings file.
+        ![Github token](img/sonar-adding-token.png) 
 
- Create a file named `sonar-project.properties` in the root of your project with the following content:
+1. Disable SonarCloud Automatic Analysis
 
-  ```properties
-  # Organization name: github username or organization, if repo is assigned to one
-  sonar.organization=<github_username>
-  # Project key on sonar. Default is <org_name>_<your-repo-name>
-  sonar.projectKey=<github_username>_bootcamp-blog-<github_username>
-  
-  # Sources
-  sonar.sources=.
-  sonar.exclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
-  
-  # Tests
-  sonar.tests=.
-  sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
-```
+    While SonarCloud offers automatic analysis for imported projects (which provides quick setup and immediate feedback), we'll disable this feature to manually control our analysis process through CI/CD:
 
-16. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
+    - Navigate to your SonarCloud project analysis settings:
+      ```
+      https://sonarcloud.io/project/analysis_method?id=<github_username>_bootcamp-blog-<github_username>
+      ```
+
+    - Find the "Automatic Analysis" section and disable it:
+      
+      ![Disable Automatic Analysis](docs/img/sonar-disable-auto.png)
+
+    - Click "Save" to confirm your changes
+
+    This configuration allows us to:
+    - Run custom analysis steps in our CI pipeline
+    - Include test coverage data from our Jest tests
+    - Have more control over the scanning process
+    - Upload results manually from our GitHub Actions workflow
+
+    Now SonarCloud will only analyze your code when we explicitly trigger analysis through our CI/CD pipeline.
+
+
+1. Configure project by providing sonar settings file.
+
+    Create a file named `sonar-project.properties` in the root of your project with the following content:
+
+      ```properties
+      # Organization name: github username or organization, if repo is assigned to one
+      sonar.organization=<github_username>
+      # Project key on sonar. Default is <org_name>_<your-repo-name>
+      sonar.projectKey=<github_username>_bootcamp-blog-<github_username>
+      
+      # Sources
+      sonar.sources=.
+      sonar.exclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
+      
+      # Tests
+      sonar.tests=.
+      sonar.test.inclusions=**/__tests__/**/*,**/*.test.js,**/*.spec.js
+    ```
+
+1. Configure Sonar Scan Action in your workflow. Add the following step:
+
+    ```yaml
+        - name: Sonar Scan
+          uses: SonarSource/sonarqube-scan-action@v5.0.0
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    ```
+
+17. You are all set. On your workflow run, sonar scan will be executed and published to the repository.
 
 ### 3.3.4. Test Coverage
 
