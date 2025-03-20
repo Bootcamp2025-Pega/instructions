@@ -371,10 +371,11 @@ Detailed instruction explaining above steps can be found in [GitHub doc](https:/
   }
 ```
   It should look like this:
-![Semgrep - Projects](img/sast/code_snippet01.png)
+![Vulnerability example](img/sast/code_snippet01.png)
 
 8. Push changes to remote brach and create a Pull Request
 9. Wait for CodeQL analysis to finish and review issue found.
+10. Discard the PR (it's vulnerable!)
 
 
 ### 3.3.6. Software Composition Analysis (SCA)
