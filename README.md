@@ -2,21 +2,21 @@
 
 Welcome to the DevOps Bootcamp! This bootcamp is designed to give you hands-on experience with setting up a standard Software Development Life Cycle (SDLC) for a simple application, using GitHub, GitHub Actions, and other free-tier DevOps tools. Over the course of this 3-hour interactive session, you’ll learn how to:
 
-* Create and manage a GitHub repository.
-* Implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
-* Deploy applications to free-tier service.
+  * Create and manage a GitHub repository.
+  * Implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
+  * Deploy applications to free-tier service.
 
 # 1. Requirements
 
 ## 1.1. Prerequisites
 
-* Basic command-line skills: Comfort with navigating directories and running simple commands in a terminal.
-* Git & GitHub basics: Understanding of how to clone a repository, commit changes, and push to a remote branch.
+  * Basic command-line skills: Comfort with navigating directories and running simple commands in a terminal.
+  * Git & GitHub basics: Understanding of how to clone a repository, commit changes, and push to a remote branch.
 
 ## 1.2. Materials
 
-* A laptop.
-* A GitHub account (free).
+  * A laptop.
+  * A GitHub account (free).
   
   During the workshop we will work on GitHub Codespaces. This ensures everyone has a uniform environment, reducing setup issues.
 
