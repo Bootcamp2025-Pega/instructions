@@ -364,26 +364,29 @@ Detailed instruction explaining above steps can be found in [GitHub doc](https:/
     // Make a GET request to the provided URL
     const response = await fetch(url);
     if (!response.ok) {
-      return res.status(400).json({ message: 'Failed to fetch from the provided URL' });
+      console.error("Something went wrong...");
     }
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    console.error(error);
   }
 ```
   It should look like this:
-![Semgrep - Projects](img/sast/code_snippet01.png)
+![Vulnerability example](img/sast/code_snippet01.png)
 
 8. Push changes to remote brach and create a Pull Request
 9. Wait for CodeQL analysis to finish and review issue found.
+10. Discard the PR (it's vulnerable!)
 
 
 ### 3.3.6. Software Composition Analysis (SCA)
 1. Go to Security tab in your Gtihub repository
 2. Click "Enable Dependabot alerts"
 ![alt text](img/sast/dependabot01.png)
-3. Click "Enable" on Dependabot Alerts 
+3. Click "Enable" on **Dependabot Alerts** and **Dependabot security updates**
 ![alt text](img/sast/dependabot02.png)
 4. Go back to Security tab and review Dependabot findings 
+![alt text](img/sast/dependabot03.png)
+Additionally, Pull Request should be automatically created that updates vulnerable library to vulnerability-free version.
 
 ### 3.3.7. Releasing stable version
 After itegrating bunch of changes to `main`, you've finished working on a feature(s) and you need to release a new version. 
