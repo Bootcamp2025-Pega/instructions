@@ -112,7 +112,7 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 ### 3.3.1. Basic build pipeline
 
-Goal: Create basic pipeline that builds project and execute tests.
+Goal: Create basic pipeline that builds project and executes tests.
 
 1.  **Create a base workflow**
   * make sure you are on the `main` branch<br>
@@ -393,6 +393,11 @@ After itegrating bunch of changes to `main`, you've finished working on a featur
 ![alt text](img/releases-page.png)
 * You can then view your release along with its assets
 ![alt text](img/releases-final.png)
+
+### Wrap-up
+At this point you have working CI pipeline that executes tests, measures coverage and performs static analysis. There is one problem though - nothing blocks you from merging invalid PRs.
+
+**TASK:** allow merging **only if** build will pass green.
 
 ## 3.4 Module 4: Deployment to Free-Tier Service
 # How to Create an Account on Vercel
