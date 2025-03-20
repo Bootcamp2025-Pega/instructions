@@ -100,6 +100,14 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
     * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
         ![Forwarded port](img/codespaces-open-app.png)
 
+    * 6. **Allow log in into dev mode** Copy `Forwarded Address.` Go to `Terminal` tab and close the application (Ctrl^C). Open the .env file and add the following code
+    
+    ```bash
+    NEXTAUTH_URL=<copied_forwarded_address>/api/auth
+    NEXTAUTH_SECRET=verystrongsecret
+    ```
+    Rerun application.
+
 ## 3.3. Module 3: Implementing CI/CD with GitHub Actions
 
 ### 3.3.1. Basic build pipeline
@@ -615,3 +623,77 @@ To create an OAuth app in GitHub, follow these steps:
  - OAUTH_GITHUB_SECRET = **Client Secret**
  ![oauth1-1](img/oauth4.png)
 
+
+# Basic deployment pipeline
+Goal: Create basic deployment pipeline that deploy project on Vercel platform.
+
+### Create a deployment workflow
+make sure you are on the main branch
+```bash
+git branch
+```
+
+create a new one
+```bash
+git checkout -b add-workflow-deployment
+```bash
+create file .yaml 
+```bash
+mkdir -p .github/workflows && touch .github/workflows/production.yaml
+```
+paste the following into /.github/workflows/production.yaml
+```bash
+name: Vercel Production Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  GITHUB_ID: ${{ secrets.OAUTH_GITHUB_ID }}
+  GITHUB_SECRET: ${{ secrets.OAUTH_GITHUB_SECRET }}
+  NEXTAUTH_SECRET: ${{ secrets.OAUTH_SECRET }}
+  NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  Deploy-Production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm i -g vercel
+      - name: Set Environment Variables
+        run: |
+            echo -n $GITHUB_ID | vercel env add GITHUB_ID production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $GITHUB_SECRET | vercel env add GITHUB_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $NEXTAUTH_SECRET | vercel env add NEXTAUTH_SECRET production --token=${{ secrets.VERCEL_TOKEN }}
+            echo -n $NEXTAUTH_URL | vercel env add NEXTAUTH_URL production --token=${{ secrets.VERCEL_TOKEN }} 
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+```
+commit changes and push to remote
+```bash
+git add .
+git commit -m "add deployment workflow"
+git push -u origin add-workflow-deployment
+```
+
+head to the URL provided by git:
+
+you will see context menu for Pull Request creation<br>
+**IMPORTANT**: set `base` (red box) to point to **your** repo, not the BootCamp one
+![alt text](img/pr-creation.png)
+
+adjust the title / add description and click `Create pull request` button
+
+you will see the pull request page. Wait few seconds for **CI/CD Pipeline** check to appear. You can view details of the pipeline run by clicking its name.
+![alt text](img/pr-overview.png)
+
+Once the pipeline will pass, merge the PR (`Merge pull request` button).
+
+Now, every time a tag is created, a workflow will be started that will deploy the tag version to production.
