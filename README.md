@@ -304,10 +304,17 @@ Verify Configuration. After your workflow completes:
 This integration will help you track code quality and ensure adequate test coverage for your application.
 
 ### 3.3.5. Static Application Security Testing (SAST)
-1. Follow [GitHub instruction](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository) to enable CodeQL scans on your repository.
+1. On GitHub, navigate to the main page of the repository.
+2. Under your repository name, click  Settings. If you cannot see the "Settings" tab, select the  dropdown menu, then click Settings.
+3. In the "Security" section of the sidebar, click  Code security.
+4. In the "Code scanning" section, select Set up , then click Default.
+You will then see a "CodeQL default configuration" dialog summarizing the code scanning configuration automatically created by default setup.
+5. Review the settings for default setup on your repository, then click Enable CodeQL. This will trigger a workflow that tests the new, automatically generated configuration.
 
-2. Chackout to new branch
-3. Add below code block to `handle(req, res)` method in [pages/api/publish/[id].ts](https://github.com/Bootcamp2025-Pega/bootcamp-blog/blob/main/pages/api/publish/%5Bid%5D.ts)
+Detailed instruction explaining above steps can be found in [GitHub doc](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository)
+
+6. Chackout to new branch
+7. Add below code block to `handle(req, res)` method in [pages/api/publish/[id].ts](https://github.com/Bootcamp2025-Pega/bootcamp-blog/blob/main/pages/api/publish/%5Bid%5D.ts)
 ```ts
   const { url } = req.query;
   try {
@@ -323,8 +330,8 @@ This integration will help you track code quality and ensure adequate test cover
   It should look like this:
 ![Semgrep - Projects](img/sast/code_snippet01.png)
 
-4. Push changes to remote brach and create a Pull Request
-5. Wait for CodeQL analysis to finish and review issue found.
+8. Push changes to remote brach and create a Pull Request
+9. Wait for CodeQL analysis to finish and review issue found.
 
 
 ### 3.3.6. Software Composition Analysis (SCA)
