@@ -400,11 +400,12 @@ At this point you have working CI pipeline that executes tests, measures coverag
 **TASK:** allow merging **only if** build will pass green.
 
 ## 3.4 Module 4: Deployment to Free-Tier Service
-# How to Create an Account on Vercel
+
+### 3.4.1 How to Create an Account on Vercel
 
 This guide will walk you through the steps to create an account on Vercel.
 
-### 1. Sign Up Options
+### 3.4.1.1. Sign Up Options
 
 You can sign up for a Vercel account using the following methods:
 - **Email**: Use your email address to create an account.
@@ -413,7 +414,7 @@ You can sign up for a Vercel account using the following methods:
 
 ***In our case, we will focus on Signing Up with Email***
 
-### 2. Signing Up with Email
+### 3.4.1.2. Signing Up with Email
 
 1. Enter your email address on the [Vercel sign-up page](https://vercel.com).
 ![SignUp](img/vercel-signup.png)
@@ -432,22 +433,22 @@ You can sign up for a Vercel account using the following methods:
 For more details, visit the [Vercel Documentation](https://vercel.com/docs/accounts/create-an-account).
 
 
-# How to Get a Vercel API Access Token
+### 3.4.2 How to Get a Vercel API Access Token
 
 This guide explains the steps to create and manage a Vercel API Access Token.
 
-### 1. Navigate to Account Settings
+### 3.4.2.1. Navigate to Account Settings
 
 1. Log in to your Vercel account.
 2. In the top-right corner of the dashboard, click on your profile picture.
 3. Select **Settings** from the dropdown menu.
 
-### 2. Access the Tokens Section
+### 3.4.2.2. Access the Tokens Section
 
 1. In the **Account Settings** page, locate the **Tokens** section in the sidebar.
 2. Click on **Tokens** to open the token management page.
 
-### 3. Create a New Access Token
+### 3.4.2.3. Create a New Access Token
 
 1. In **Create token** section:
 2. Enter a descriptive name for your token.
@@ -462,21 +463,21 @@ For security reasons, you are not able to see it again.
 
 > **Important**: Make a note of the token immediately after creation, as it will not be displayed again.
 
-### 4. Use the Access Token
+### 3.4.2.4. Use the Access Token
 
 This guide explains how to securely store access token, in your GitHub repository using repository secrets.
 
-#### 4.1. Navigate to Your Repository Settings
+### 3.4.2.4.1. Navigate to Your Repository Settings
 
 1. Go to the main page of your GitHub repository.
 2. Under your repository name, click on **Settings**.
 
-### 4.2. Access the Secrets Section
+### 3.4.2.4.2. Access the Secrets Section
 
 1. In the **Settings** sidebar, locate the **Security** section.
 2. Click on **Secrets and variables**, then select **Actions**.
 
-### 4.3. Add a New Repository Secret
+### 3.4.2.4.3. Add a New Repository Secret
 
 1. Click the **New repository secret** button.
 2. In the **Name** field, enter a name for your secret: `VERCEL_TOKEN`.
@@ -484,18 +485,18 @@ This guide explains how to securely store access token, in your GitHub repositor
 4. Click **Add secret** to save it.
 
 
-# How to set up your Vercel Postgres database
+### 3.4.3. How to set up your Vercel Postgres database
 
 
 This guide explains the steps to set up a Vercel Postgres database for your project.
 
-### 1. Access the Storage Tab
+### 3.4.3.1. Access the Storage Tab
 
 1. Log in to your Vercel account.
 2. Navigate to your project dashboard.
 3. Select the **Storage** tab from the project settings.
 
-### 2. Create a New Database
+### 3.4.3.2. Create a New Database
 
 1. Select **Neon Serverless Postgres** from the list and click **Create**.
 
@@ -507,14 +508,14 @@ This guide explains the steps to set up a Vercel Postgres database for your proj
 
 3. Click **Continue** to proceed.
 
-### 3. Configure the Database
+### 3.4.3.3. Configure the Database
 
 1. Enter a name for your database (e.g., `my_postgres_db`).
    - The name can only contain alphanumeric characters, underscores (`_`), and hyphens (`-`).
    - It must not exceed 32 characters.
 2. Click **Create** to finalize the setup.
 
-### 4. Environment Variables
+### 3.4.4. Environment Variables
 
 1. Once the database is created, Vercel automatically adds environment variables to your project:
 
@@ -523,12 +524,12 @@ This guide explains the steps to set up a Vercel Postgres database for your proj
 > **Important**: We just created db but is  it not connected to any project yet.
 
 
-# How to add your GitHub project to Vercel and connect to database
+### 3.4.5. How to add your GitHub project to Vercel and connect to database
 
 
 This guide explains the steps to connect your GitHub project with arleady created db.
 
-### 1. Link project
+### 3.4.5.1. Link project
 
 1. Go to your GitHub project, open `Codespaces`.
 2. Export VERCEL_TOKEN
@@ -545,21 +546,21 @@ vercel link --token=$VERCEL_TOKEN
 Accept default values. After finishing you should see:
 ![link](img/vercel-link.png)
 
-### 2. Add secrets to your GiHub project
+### 3.4.5.2. Add secrets to your GiHub project
 
 1. Go to directory `.vercel` and open file `project.json`
 2. Add next secrets into you GitHub project:
 - `VERCEL_PROJECT_ID` - copy value from `project.json` file from key `projectId`
 - `VERCEL_ORG_ID` - copy value from `project.json` file from key `orgId`
 
-### 3. Connect project to database
+### 3.4.5.3. Connect project to database
 
 1. Go to your Vercel page, go to `Storage` and click button `Connect Project`
 ![connect-project1](img/connect-project1.png)
 ![connect-project2](img/connect-project2.png)
 Select proper values and click `Connect`
 
-### 4. Export env variables
+### 3.4.5.4. Export env variables
 
 1. Back to `Codespaces` and execute command
 ```bash
@@ -568,11 +569,11 @@ vercel env pull .env --token=$VERCEL_TOKEN
 `.env` file should be generated.
 We now have a fully functioning Vercel Postgres database and have all the environment variables to run it locally and on Vercel.
 
-# Setup Prisma and create the database schema
+### 3.4.6. Setup Prisma and create the database schema
 
 This guide explains the steps to setup Prisma and create database schema.
 
-### 1. Install Prisma
+### 3.4.6.1. Install Prisma
 
 1. Go to `Codespaces` and execute command
 ```bash
@@ -580,7 +581,7 @@ npm i prisma --save-dev --legacy-peer-deps
 npm i @prisma/client@6.5.0 --legacy-peer-deps
 ```
 
-### 2. Generate schema
+### 3.4.6.2. Generate schema
 
 1. Prisma schema defines two models into direcotry `prisma`, each of which will map to a table in the underlying database: User and Post.
 To actually create the tables in your database, you now can use the following command:
@@ -591,35 +592,35 @@ You should see following output:
 ![prisma-1](img/prisma1.png)
 
 
-# Creating OAuth Apps in GitHub
+### 3.4.7.  Creating OAuth Apps in GitHub
 
 To create an OAuth app in GitHub, follow these steps:
 
-### Step 1: Navigate to GitHub Settings
+### 3.4.7.1. Navigate to GitHub Settings
 
 1. Go to GitHub and log in to your account.
 2. In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
-### Step 2: Register a New OAuth Application
+### 3.4.7.2. Register a New OAuth Application
 
 1. In the left sidebar, click **Developer settings**.
 2. In the left sidebar, click **OAuth Apps**.
 3. Click **New OAuth App**.
 ![oauth1-1](img/oauth1.png)
 
-### Step 3: Fill in the Application Details
+### 3.4.7.3. Fill in the Application Details
 
 1. **Application name**: Enter a name for your application. This name will be displayed to users when they are asked to grant access to your application `<project name>.vercel.app`.
 2. **Homepage URL**: Enter the URL of your application's homepage `https://<project name>.vercel.app`.
 3. **Authorization callback URL**: Enter the URL where users will be sent after they authorize with GitHub. This URL should be a route in your application that handles the OAuth callback. `https://<project name>.vercel.app/api/auth/callback/github`
 ![oauth1-1](img/oauth3.png)
 
-### Step 4: Register the Application
+### 3.4.7.4. Register the Application
 
 1. Click **Register application**.
 2. After registering, you will be redirected to the application's page where you can see the **Client ID** and **Client Secret**. These credentials are used to authenticate your application with GitHub.
 
-### Step 5: Configure Environment Variables
+### 3.4.7.5 Configure Environment Variables
 
 1. In your GitHub project, store the **Client ID** and **Client Secret** as secret variables:
  - NEXTAUTH_URL = `https://<project name>.vercel.app/api/auth`
@@ -629,10 +630,10 @@ To create an OAuth app in GitHub, follow these steps:
  ![oauth1-1](img/oauth4.png)
 
 
-# Basic deployment pipeline
+### 3.4.8. Basic deployment pipeline
 Goal: Create basic deployment pipeline that deploy project on Vercel platform.
 
-### Create a deployment workflow
+### 3.4.8.1. Create a deployment workflow
 make sure you are on the main branch
 ```bash
 git branch
