@@ -90,12 +90,21 @@
             </aside>
           </section>
           <section>
-            <h3>Our flow</h3>
+            <img src="img/devops-plan.png">
+          </section>
+          <section>
+            <img src="img/devops-code.png">
+          </section>
+          <section>
+            <img src="img/devops-deploy.png">
+          </section>
+          <section>
+            <h3>Git flow</h3>
             <img src="img/your-flow.png" alt="Your flow" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
           </section>
         <section>
           <h3>Pipelines - Github actions</h3>
-          <img src="img/workflow.png" alt="Github actions" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
+          <img src="img/workflow1.png" alt="Github actions" style="margin: 0 auto 0 auto; background: whitesmoke;">
           <aside class="notes">
             <ul>
             <li>
@@ -126,77 +135,7 @@
           </aside>
         </section>
           <section>
-            <h3>Some stages in detail</h3>
-          </section>
-        <section>
-          <h3>Static code analyses</h3>
-          <img src="img/sca.png" alt="Static code analysis" style="height: 500px; margin: 0 auto 0 auto; background: whitesmoke;">
-          <aside class="notes">
-            <ul>
-              <li>
-                Static code analysis is a method of debugging by examining source code before a program is run.
-              </li>
-              <li>
-                It's done by analyzing a set of code against a set (or multiple sets) of coding rules.
-              </li>
-              <li>
-                Static code analysis can be done by tools like SonarQube, CodeClimate, or ESLint.
-              </li>
-              <li>
-                Static code analysis can help identify potential security vulnerabilities, code smells, and bugs.
-              </li>
-              <li>
-                Static code analysis can be integrated into your CI/CD pipeline to automate the process.
-              </li>
-              <li>
-                Static code analysis can help improve code quality and reduce technical debt.
-              </li>
-            </ul>
-          </aside>
-        </section>
-        <section>
-          <h3>Static Application Security Testing (SAST)</h3>
-          <aside class="notes">
-            <ul>
-              <li>
-                Static Application Security Testing (SAST) is a type of security testing that is performed without executing the code.
-              </li>
-              <li>
-                SAST tools analyze the source code or compiled code to identify security vulnerabilities.
-              </li>
-              <li>
-                SAST tools can help identify security vulnerabilities such as SQL injection, cross-site scripting, and buffer overflows, hardcoded secrets, insecure dependencies, unvalidated inputs.
-              </li>
-              <li>
-                SAST tools can be integrated into your CI/CD pipeline to automate the process.
-              </li>
-              <li>
-                SAST tools can help improve the security of your code and reduce the risk of security breaches.
-              </li>
-            </ul>
-          </aside>
-        </section>
-          <section>
-            <h3>Software Composition Analysis (SCA)</h3>
-            <aside class="notes">
-              <ul>
-                <li>
-                  Software Composition Analysis (SCA) is a method of identifying and tracking the open-source components used in a project.
-                </li>
-                <li>
-                  SCA tools scan your project's dependencies to identify known security vulnerabilities and licensing issues.
-                </li>
-                <li>
-                  SCA tools can help you manage your project's dependencies and ensure that you are using secure and compliant components.
-                </li>
-                <li>
-                  SCA tools can be integrated into your CI/CD pipeline to automate the process.
-                </li>
-                <li>
-                  SCA tools can help you reduce the risk of security vulnerabilities and licensing issues in your project.
-                </li>
-              </ul>
-            </aside>
+            <h3>Different kinds of static analysis</h3>
           </section>
           <section>
 <table style="font-size: 0.8em; border-collapse: collapse; width: 100%;">
@@ -218,14 +157,14 @@
     <tr>
       <td>Checks for</td>
       <td>License compliance, CVEs</td>
-      <td>Bugs, duplication style issues</td>
-      <td>Security vulnerabilities like SQL injection</td>
+      <td>Bugs, duplication, style issues</td>
+      <td>SQL injection, XSS etc.</td>
     </tr>
     <tr>
       <td>Tools</td>
       <td>Snyk, WhiteSource</td>
       <td>SonarQube, ESLint</td>
-      <td>Semgrep, Fortify, Veracode</td>
+      <td>Semgrep, CodeQL, Veracode</td>
     </tr>
   </tbody>
 </table>
