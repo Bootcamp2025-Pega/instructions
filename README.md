@@ -195,18 +195,21 @@ SonarCloud is a cloud-based service designed to continuosly inspect your code fo
 
 #### **Integrate SonarCloud to your project**
 In order to integrate Sonar into your project follow those steps:
+
 1. Go to SonarCould [login page](https://sonarcloud.io/login)
-2. Choose login with Github
+
+1. Choose login with Github
 ![Login with Github](img/sonar-loging.png)
-3. Grand SonarQubeCloud necessary permissions to your project
+
+1. Grand SonarQubeCloud necessary permissions to your project
 ![Sonar permisions](img/sonar-authorize.png)
-4. Configure project binding on the GitHub side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
-5. Generate token. In order to connect Github and Sonar you need to generate token:
+
+1. Configure project binding on the GitHub side. Navigate to https://github.com/<github_username>/bootcamp-blog-<github_username>/settings/installations and ensure the **SonarQubeCloud** is configured properly: check `Repository access` section and verify that your project access is granted.
+
+1. Generate token. In order to connect Github and Sonar you need to generate token:
 * First go to My Account
 
-4. Connect to bootcamp org
-
-5. Click on + sign and choose Analyze new project
+1. Click on + sign and choose Analyze new project
 
 ![Sonar add](img/sonar-add-org1.png)
 
@@ -247,7 +250,7 @@ In order to integrate Sonar into your project follow those steps:
 
 ![Security tab](img/sonar-generating-token.png)
 
-* Now you need to add token to Github secrets. Enter name and contents of your secret.
+* Now you need to add token to Github secrets (`SONAR_TOKEN`). Enter name and contents of your secret.
 
 ![Github token](img/sonar-adding-token.png)
 15. Configure project by providing sonar settings file.
@@ -273,7 +276,7 @@ In order to integrate Sonar into your project follow those steps:
 
 ### 3.3.4. Test Coverage
 
-In order to capture coverage, we need to enable it alongside tests.
+In order to capture test coverage, we need to enable it alongside tests.
 
 Add the following content to `module.exports` in the `jest.config.js` file on the ROOT of your project:
 ```js
