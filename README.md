@@ -67,16 +67,16 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 4. **Create your own fork of bootcamp-blog repository**
 
-   * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
+  * 1. **Click the "Fork" button:**  In the top-right corner of the repository page, click the "Fork" button.
 
-   <img src="img/create-fork-button.png" width="250">
+  <img src="img/create-fork-button.png" width="250">
 
-   * 3. **Select the organization:** Choose your user space as an organization.
-   * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
+  * 3. **Select the organization:** Choose your user space as an organization.
+  * 4. **Rename the repository:** In the "Repository name" field, enter the name for the forked repository, following the pattern `bootcamp-blog-{username}`, replacing `{username}` with your GitHub username.
 
-   <img src="img/create-fork.png" width="450">
+  <img src="img/create-fork.png" width="450">
 
-   * 5. **Create the fork:** Click the "Create fork" button.
+  * 5. **Create the fork:** Click the "Create fork" button.
 
 5. **Navigate to your repository and get familiar with project**
 
@@ -85,28 +85,28 @@ Below is a high-level breakdown of the 3-hour bootcamp session:
 
 6. **Run application in Codespaces**
 
-    * 1.  **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
-    * 2.  **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
-    ![Create codespace](img/create-codespace.png)
-    * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
-    * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
-    ```bash
-    docker compose up -d
-    npm install
-    npx prisma db push
-    npm run dev
-    ```
+  * 1.  **Open Codespaces:** Navigate to your forked `bootcamp-blog-{username}` repository on GitHub. Click on the green "Code" button.
+  * 2.  **Create new Codespace:** Select the "Codespaces" tab and click on "Create codespace on main". This will start a new cloud-based development environment.
+  <img src="img/create-codespace.png" width="450">
+  * 3.  **Wait for Codespace to initialize:** GitHub will set up a virtual machine and automatically clone your repository into it. This process may take a few minutes.
+  * 4.  **Run the application:** Once the Codespace is ready, navigate to a terminal. Run commands:
+  ```bash
+  docker compose up -d
+  npm install
+  npx prisma db push
+  npm run dev
+  ```
     
-    * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
-        ![Forwarded port](img/codespaces-open-app.png)
+  * 5.  **Access the application:** Once the application is running, Codespaces will provide a URL to access it. Go to the **Ports** tab in the bottom panel and find the URL next to port 3000. Click on the URL to open the application in a new browser tab.
+  ![Forwarded port](img/codespaces-open-app.png)
 
-    * 6. **Allow log in into dev mode** Copy `Forwarded Address.` Go to `Terminal` tab and close the application (Ctrl^C). Open the .env file and add the following code
+  * 6. **Allow log in into dev mode** Copy `Forwarded Address.` Go to `Terminal` tab and close the application (Ctrl^C). Open the .env file and add the following code
     
-    ```bash
-    NEXTAUTH_URL=<copied_forwarded_address>/api/auth
-    NEXTAUTH_SECRET=verystrongsecret
-    ```
-    Rerun application.
+  ```bash
+  NEXTAUTH_URL=<copied_forwarded_address>/api/auth
+  NEXTAUTH_SECRET=verystrongsecret
+  ```
+  Rerun application.
 
 ## 3.3. Module 3: Implementing CI/CD with GitHub Actions
 
